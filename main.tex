@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage,enumitem,amsmath,amssymb,graphicx}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{Literature Study}
+\author{Arup Das}
+\date{} % clear date
+\newtheorem{question}{Question}
+
+\newenvironment{solution}[1][\it{Solution}]{\textbf{#1. } }
+
+\begin{document}
+\maketitle
+\hrulefill\\
+\begin{enumerate}
+    \item PorterStemmer algorithm does not follow linguistics rather a set of 05 rules for different cases that are applied in phases (step by step) to generate stems.(REf: \url{https://www.datacamp.com/community/tutorials/stemming-lemmatization-python}, Accessed in 06-02-2021)
+    \item Python nltk introduced SnowballStemmers that are used to create non-English Stemmers!' LancasterStemmer (Paice-Husk stemmer) is an iterative algorithm where over stemming can occur.
+    \item Python NLTK provides WordNet Lemmatizer that uses the WordNet Database to lookup lemmas of words.
+    \item If you publish work that uses NLTK, please cite the NLTK book as follows:\\
+Bird, Steven, Edward Loper and Ewan Klein (2009), Natural Language Processing with Python. O’Reilly Media Inc.\\ 
+    \item About Author: \url{https://www.isical.ac.in/~utpal}\\
+    BenLem Dataset: \url{https://www.isical.ac.in/~utpal/docs/bengali-lemma-WSD-dataset.zip}\\
+    \displaystyle $Dist(W_1,W_2)$ = \begin{cases} 
+\frac{n-m+1}{m} $\Sigma_{i=m}^{n}\frac{1}{2^{i-m}}$ & \text{if $m \geq 0$} \\  
+ 0 & \text{otherwise}  
+ \end{cases}\\
+ \item Download TakeOwnership to get access to WindowsApp:\\
+  \url{https://www.dropbox.com/s/j8yk084d4bf1ixy/TakeOwnership.zip?dl=0&file_subpath=%2FTake+Ownership%2FInstallTakeOwnership.reg}
+  \item Create DB named BasicIndex\\
+  mycursor.execute("CREATE DATABASE BasicIndex")\\
+  Create a table named Document.\\
+  \begin{verbatim}
+  mycursor.execute("CREATE TABLE DOCUMENT (DOC_ID INT AUTO_INCREMENT PRIMARY KEY,
+  DATA MEDIUMTEXT)")
+  \end{verbatim}
+\end{enumerate}
+\begin{center}
+    TO-DO
+\end{center}
+\begin{enumerate}
+    \item Read: \url{https://www.nltk.org/book/ch02.html}
+    \item Everything about file handling in python: \url{https://www.datacamp.com/community/tutorials/reading-writing-files-python}
+    \item Language model comparison between two poets. Look for words used by Rabindranath Tagore more frequently and its corresponding genre. See if another specific words give you any information .i.e look for patterns in the poem.
+    \item Think about this plan.
+        \begin{enumerate}
+            \item I could store the indexes in memory(~1GB space) and documents in DB if the dataset is not that big.
+            \item For every update in the document, I can delete the document and re-insert them into the DB. 
+            \item I can keep two copies of the indexes, for every update that occurs for a document I can update one copy while the other copy is being used then I can redirect all queries to the latter updated copy while I update the former outdated copy.  
+        \end{enumerate}
+\end{enumerate}
+
+\begin{center}
+    How-To?
+\end{center}
+How to page of NLTK: \url{http://www.nltk.org/howto/}
+\begin{center}
+    Best Development Practices
+\end{center}
+\begin{enumerate}
+    \item Dealing with MySQL DB. The process is to be simple 7 steps
+    \begin{enumerate}
+        \item 
+        Create connection
+        \item Create cursor
+        \item Create Query string
+        \item Execute the query
+        \item Commit to the query
+        \item Close the cursor
+        \item Close the connection 
+    \end{enumerate}
+    \url{https://stackoverflow.com/questions/5504340/python-mysqldb-connection-close-vs-cursor-close#:~:text=Connection%20and%20cursor%20are%20different,same%20data%20within%20single%20connection.}
+
+\end{enumerate}
+\end{document}
